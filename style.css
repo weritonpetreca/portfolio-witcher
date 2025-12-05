@@ -155,18 +155,27 @@ a {
     color: var(--header-color);
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease, letter-spacing 0.3s ease;
+    /* Alterado para 'all' para animar qualquer mudança (cor, tamanho, sombra) */
+    transition: all 0.3s ease; 
 }
 
 a:hover {
     color: var(--link-hover-color);
     text-decoration: none;
-    letter-spacing: 0.5px; /* Efeito sutil no hover */
+    letter-spacing: 0.5px;
 }
 
 .contact-links a {
     margin: 0 15px;
-    font-size: 1.2em;
+    font-size: 1.5em; /* Aumentei um pouco a base para ficarem mais visíveis */
+    display: inline-block; /* CRUCIAL: 'transform' funciona melhor em blocos inline */
+}
+
+/* Regra específica para o efeito de Zoom nos ícones */
+.contact-links a:hover {
+    color: var(--header-color); /* Mantém dourado ou muda para vermelho se preferir */
+    transform: scale(1.3); /* Aumenta 30% do tamanho */
+    text-shadow: 0 0 10px rgba(200, 163, 101, 0.6); /* Adiciona um brilho mágico */
 }
 
 /* --- Rodapé --- */
@@ -174,4 +183,30 @@ footer {
     margin-top: 40px;
     text-align: center;
     color: #888;
+}
+
+/* --- Scrollbar Personalizada (Estilo Bruxo) --- */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--background-color); 
+}
+::-webkit-scrollbar-thumb {
+    background: var(--header-color); 
+    border-radius: 5px;
+    border: 2px solid var(--background-color);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #e0c080; /* Um dourado mais claro ao passar o mouse */
+}
+
+.project-card, .arsenal-category, .contact-links a {
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    border-left-color: var(--link-hover-color); /* Muda a cor da borda lateral */
+    box-shadow: 0 0 15px rgba(200, 163, 101, 0.15); /* Brilho dourado sutil */
+    transform: translateY(-2px); /* Levanta levemente */
 }

@@ -8,6 +8,11 @@
     --link-hover-color: #ff5555; /* Vermelho para destaque */
 }
 
+html {
+    scroll-behavior: smooth;
+    /* Mantenha o restante que já estiver aqui */
+}
+
 body {
     /* Simulação de textura de ruído/pergaminho escuro */
     background-color: var(--background-color);
@@ -30,6 +35,304 @@ body {
 .profile-header {
     text-align: center;
     margin-bottom: 40px;
+}
+
+/* Container do Hero para alinhar foto e texto */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    flex-wrap: wrap; /* Para funcionar no celular */
+}
+
+/* Foto de Perfil Estilosa */
+.hero-avatar img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid var(--header-color);
+    box-shadow: 0 0 20px rgba(200, 163, 101, 0.4); /* Brilho mágico */
+    object-fit: cover;
+}
+
+/* Badge da AWS */
+.aws-badge {
+    width: 120px;
+    height: auto;
+    margin-top: 15px;
+    transition: transform 0.3s;
+}
+.aws-badge:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px #ff9900);
+}
+
+/* Botão de Chamada (CTA) */
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: transparent;
+    border: 2px solid var(--header-color);
+    color: var(--header-color);
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: var(--header-color);
+    color: var(--background-color);
+    box-shadow: 0 0 15px var(--header-color);
+}
+
+/* --- Estilos do Novo Códice --- */
+.codex-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* Ícone grande estilo "Selo" */
+.codex-icon {
+    font-size: 4em;
+    color: var(--header-color);
+    opacity: 0.8;
+    padding-top: 10px;
+    display: none; /* Esconde em celulares por padrão */
+}
+
+/* Mostra o ícone apenas em telas maiores */
+@media (min-width: 768px) {
+    .codex-icon {
+        display: block;
+    }
+}
+
+.codex-text {
+    flex: 1;
+}
+
+/* Frase de Destaque */
+.highlight-quote {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.4em;
+    color: #e0e0e0;
+    border-left: 4px solid var(--header-color);
+    padding-left: 20px;
+    margin-bottom: 20px;
+    font-style: italic;
+    background: linear-gradient(90deg, rgba(200, 163, 101, 0.1) 0%, transparent 100%);
+    padding: 15px;
+    border-radius: 0 5px 5px 0;
+}
+
+/* Letra Capitular (Estilo Medieval) */
+.drop-cap {
+    float: left;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 3.5em;
+    line-height: 0.8;
+    margin-right: 10px;
+    margin-top: 5px;
+    color: var(--header-color);
+    text-shadow: 2px 2px 0px #000;
+}
+
+.project-card p {
+    margin-bottom: 15px; /* Mais espaço entre os parágrafos */
+    font-size: 0.95em;   /* Um pouco menor para ficar elegante */
+    color: #ccc;         /* Cinza um pouco mais claro para leitura */
+}
+
+.project-card strong {
+    color: var(--header-color); /* Destaca os termos chaves em Dourado */
+}
+
+
+/* --- Timeline da Forja (Formação) --- */
+.timeline {
+    position: relative;
+    padding-left: 30px; /* Espaço para a linha */
+    border-left: 3px solid var(--border-color); /* A linha vertical */
+    margin-left: 10px;
+}
+
+.timeline-item {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* O "Ponto" na linha */
+.timeline-marker {
+    position: absolute;
+    left: -39px; /* Ajuste fino para centralizar na linha */
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    border: 3px solid var(--header-color); /* Dourado */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+/* Destaque para itens ativos/em andamento */
+.timeline-item.active .timeline-marker {
+    background-color: var(--header-color);
+    box-shadow: 0 0 15px var(--header-color); /* Brilho mágico */
+}
+
+.timeline-content {
+    background-color: rgba(255, 255, 255, 0.03); /* Fundo sutil */
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    border-color: var(--header-color);
+    transform: translateX(5px);
+}
+
+.timeline-date {
+    font-size: 0.85em;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.timeline-content h3 {
+    margin: 0;
+    font-family: 'MedievalSharp', cursive;
+    color: #e0e0e0;
+    font-size: 1.3em;
+}
+
+.timeline-content h4 {
+    margin: 5px 0 10px;
+    color: var(--header-color);
+    font-weight: normal;
+    font-size: 1em;
+}
+
+/* Badges de Status */
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-weight: bold;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.status-badge.completed {
+    background-color: #333;
+    color: #aaa;
+    border: 1px solid #555;
+}
+
+.status-badge.pulse {
+    background-color: rgba(200, 163, 101, 0.1);
+    color: var(--header-color);
+    border: 1px solid var(--header-color);
+    animation: pulse-glow 2s infinite;
+}
+
+/* Animação de "Pulso" para cursos em andamento */
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 0 0 rgba(200, 163, 101, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(200, 163, 101, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(200, 163, 101, 0); }
+}
+
+/* --- Grid de Contato --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.contact-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    text-decoration: none; /* Remove sublinhado de links */
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card:hover {
+    border-color: var(--header-color);
+    background-color: rgba(200, 163, 101, 0.05);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.icon-box {
+    font-size: 1.8em;
+    color: var(--header-color);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 50%;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+}
+
+.contact-card:hover .icon-box {
+    border-color: var(--header-color);
+    box-shadow: 0 0 10px rgba(200, 163, 101, 0.2);
+}
+
+.card-info h3 {
+    margin: 0;
+    font-size: 1.1em;
+    color: #fff;
+    font-family: 'Lato', sans-serif; /* Fonte limpa para leitura */
+    font-weight: bold;
+}
+
+.card-info span {
+    font-size: 0.85em;
+    color: #888;
+}
+
+/* Feedback de Cópia do Email */
+.copy-feedback {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    color: var(--header-color);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-weight: bold;
+    border: 1px solid var(--header-color);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.contact-card:hover .copy-feedback {
+    opacity: 0.6;
 }
 
 h1 {
@@ -209,4 +512,24 @@ footer {
     border-left-color: var(--link-hover-color); /* Muda a cor da borda lateral */
     box-shadow: 0 0 15px rgba(200, 163, 101, 0.15); /* Brilho dourado sutil */
     transform: translateY(-2px); /* Levanta levemente */
+}
+
+/* --- Ajustes Finais para Mobile --- */
+@media (max-width: 768px) {
+    /* Centraliza o texto do Hero no celular */
+    .hero-container {
+        text-align: center;
+        flex-direction: column-reverse; /* Opcional: Joga a foto para cima do texto se preferir */
+    }
+
+    /* Centraliza os badges (certificações) no celular */
+    .hero-badges {
+        justify-content: center;
+        display: flex;
+    }
+
+    /* Ajuste para não colar nas bordas em telas pequenas */
+    .content-codex {
+        padding: 0 15px;
+    }
 }

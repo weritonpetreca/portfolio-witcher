@@ -14,14 +14,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weriton Petreca - Desenvolvedor Back-End</title>
 
-    <meta property="og:title" content="Weriton Petreca | Back-End Developer & Cloud Enthusiast">
-    <meta property="og:description" content="Engenheiro em transição para Tech. Especialista em Java, Spring Boot e AWS. Confira meu portfólio temático 'The Witcher'.">
+    <meta property="og:title" content="Weriton Petreca | Backend Specialist & AWS Cloud Practitioner">
+    <meta property="og:description" content="Desenvolvedor Java e Especialista em Cloud AWS. Arquitetura Hexagonal, Microservices e Soluções de Alta Performance.">
     <meta property="og:image" content="https://weriton.dev/preview-image.jpg"> <meta property="og:url" content="https://weriton.dev">
     <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Weriton Petreca | O Bruxo do Back-End">
-    <meta name="twitter:description" content="Portfólio de desenvolvimento Java e Cloud AWS.">
+    <meta name="twitter:title" content="Weriton Petreca | Backend & Cloud">
+    <meta name="twitter:description" content="Portfólio de engenharia de software focado em Java, Spring Boot e AWS.">
     <meta name="twitter:image" content="https://weriton.dev/preview-image.jpg">
     
     <link rel="icon" type="image/png" href="favicon.ico">
@@ -37,21 +37,48 @@
 <body>
 
     <header class="profile-header">
-        <h1>Weriton Luis Petreca</h1>
-        <p class="profession">Forjador de Soluções Back-End & Aspirante a DevOps</p>
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Weriton Luis Petreca</h1>
+                <p class="profession">Backend Developer | Java & AWS Cloud Practitioner</p>
+                <div class="hero-badges">
+                    <a href="https://www.credly.com/users/weriton-luis-petreca" target="_blank" rel="noopener noreferrer" title="Verificar Certificação">
+                        <img src="badge.png"
+                             alt="AWS Cloud Practitioner"
+                             class="aws-badge">
+                    </a>
+                </div>
+                <a href="#contato" class="cta-button">Contratar o Bruxo</a>
+            </div>
+            <div class="hero-avatar">
+                <img src="preview-image.jpg" alt="Weriton Petreca">
+            </div>
+        </div>
     </header>
 
     <main class="content-codex">
 
         <section class="contract-section" data-aos="fade-up">
             <h2>O Códice do Programador</h2>
-            <p>
-                Não sou apenas um programador; sou um solucionador de problemas forjado na engenharia. 
-            <br><br>
-            Minha jornada começou na <strong>Engenharia Ambiental</strong> e na gestão de processos produtivos rurais, onde aprendi que um sistema falho custa caro. Trouxe essa disciplina de monitoramento, otimização de recursos e resiliência para o mundo do código.
-            <br><br>
-            Hoje, utilizo <strong>Java, Spring Boot e AWS</strong> para construir back-ends robustos, com a mesma seriedade com que gerenciava ciclos de vida no campo. Meu objetivo? Unir desenvolvimento e operações (DevOps) para criar softwares à prova de monstros.
-            </p>
+
+            <div class="codex-container">
+                <div class="codex-icon">
+                    <i class="fas fa-scroll"></i>
+                </div>
+
+                <div class="codex-text">
+                    <div class="highlight-quote">
+                        "Código não é apenas sintaxe. É infraestrutura viva."
+                    </div>
+
+                    <p>
+                        <span class="drop-cap">A</span>ntes de orquestrar microsserviços, gerenciei ciclos de vida e recursos finitos na <strong>Engenharia</strong>. No campo, aprendi a lição mais valiosa para a Nuvem: <strong>ineficiência gera desperdício</strong> — seja de insumos em uma safra ou de processamento em um servidor.
+                    </p>
+                    <p>
+                        Hoje, traduzo essa visão sistêmica para o <strong>Backend</strong>. Não escrevo apenas software que "funciona". Projeto arquiteturas em <strong>Java, Spring e AWS</strong> focadas em resiliência, escalabilidade e custo-benefício. Minha missão é entregar performance técnica com a maturidade de quem sabe que, no fim do dia, o sistema precisa se pagar.
+                    </p>
+                </div>
+            </div>
         </section>
 
         <section class="contract-section" data-aos="fade-up">
@@ -59,7 +86,7 @@
             
             <div class="arsenal-grid">
                 <div class="arsenal-category">
-                    <h3>Poções & Elixires (Back-End)</h3>
+                    <h3><i class="fab fa-java"></i> Poções & Elixires (Back-End)</h3>
                     <ul>
                         <li>Java & Spring Boot</li>
                         <li>Spring Data JPA</li>
@@ -69,7 +96,7 @@
                 </div>
                 
                 <div class="arsenal-category">
-                    <h3>Sinais & Mensageiros (Comunicação)</h3>
+                    <h3><i class="fas fa-network-wired"></i> Sinais & Mensageiros (Comunicação)</h3>
                     <ul>
                         <li>Apache Kafka</li>
                         <li>REST APIs</li>
@@ -77,7 +104,7 @@
                 </div>
 
                 <div class="arsenal-category">
-                    <h3>Bestiário (Banco de Dados)</h3>
+                    <h3><i class="fas fa-database"></i> Bestiário (Banco de Dados)</h3>
                     <ul>
                         <li>PostgreSQL</li>
                         <li>MySQL</li>
@@ -85,7 +112,7 @@
                 </div>
 
                 <div class="arsenal-category">
-                    <h3>Alquimia da Nuvem (DevOps & Cloud)</h3>
+                    <h3><i class="fab fa-aws"></i> Alquimia da Nuvem (DevOps & Cloud)</h3>
                     <ul>
                         <li>Fundamentos de Cloud & AWS</li>
                         <li>Serviços Essenciais AWS (EC2, S3, RDS, VPC)</li>
@@ -96,7 +123,7 @@
                 </div>
 
                 <div class="arsenal-category">
-                    <h3>Ferramentas do Bruxo (Testes & Métodos)</h3>
+                    <h3><i class="fas fa-vial"></i> Ferramentas do Bruxo (Testes & Métodos)</h3>
                     <ul>
                         <li>JUnit & Mockito</li>
                         <li>TDD (Test-Driven Development)</li>
@@ -106,7 +133,7 @@
                 </div>
 
                 <div class="arsenal-category">
-                    <h3>Runas de Interface (Front-End)</h3>
+                    <h3><i class="fas fa-laptop-code"></i> Runas de Interface (Front-End)</h3>
                     <ul>
                         <li>HTML, CSS & JavaScript</li>
                         <li>Angular</li>
@@ -117,31 +144,79 @@
 
         <section class="contract-section" data-aos="fade-up">
             <h2>Contratos Concluídos (Projetos)</h2>
-            
+
             <div class="project-card">
-                <h3>Already Read That</h3>
-                <p>Missão: Desenvolver uma API REST robusta para catalogação de leituras. O contrato incluía um sistema de gamificação para engajamento e garantia de qualidade via TDD (Test-Driven Development) com JUnit 5 e Mockito.</p>
+                <h3>🏦 Vivaldi Bank Core (Enterprise Fintech API)</h3>
+                <p><strong>A Missão:</strong> Construir uma API financeira de alta criticidade, blindada contra falhas de design e preparada para a nuvem.</p>
+
+                <p><strong>A Estratégia:</strong>
+                    Adotei a <strong>Arquitetura Hexagonal (Ports & Adapters)</strong> para isolar completamente o domínio. A integridade dessa arquitetura é garantida automaticamente via testes com <strong>ArchUnit</strong>.
+                    Para infraestrutura, utilizei <strong>Terraform</strong> (IaC) para provisionar recursos na AWS e <strong>LocalStack</strong> para simulação local.</p>
+
+                <p><strong>Segurança & Observabilidade:</strong>
+                    O sistema é orientado a eventos com <strong>AWS SQS</strong> para notificações assíncronas e utiliza <strong>Testcontainers</strong> para testes de integração fidedignos. Monitoramento em tempo real via <strong>Prometheus & Grafana</strong>.</p>
+
                 <div class="tech-tags">
                     <span>Java 21</span>
-                    <span>Spring Boot</span>
-                    <span>JPA</span>
-                    <span>JUnit 5</span>
-                    <span>Angular</span>
+                    <span>Spring Boot 3.5</span>
+                    <span>Hexagonal Arch</span>
+                    <span>AWS SQS</span>
+                    <span>Terraform</span>
+                    <span>ArchUnit</span>
+                    <span>Testcontainers</span>
                 </div>
-                <a href="https://github.com/weritonpetreca/already-read-that" target="_blank">Inspecionar o Troféu (GitHub)</a>
+
+                <div class="project-links">
+                    <a href="https://github.com/weritonpetreca/vivaldi-bank" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Ver Código & Infra</a>
+                </div>
             </div>
 
             <div class="project-card">
-                <h3>PetrecaDelivery</h3>
-                <p>Missão: Forjar uma plataforma de delivery com arquitetura de microserviços, aplicando os princípios do DDD. O trabalho envolveu a implementação de um API Gateway (Spring Cloud) e comunicação assíncrona com Apache Kafka para alta escalabilidade.</p>
+                <h3>📦 PetrecaDelivery (Microservices Ecosystem)</h3>
+                <p><strong>A Missão:</strong> Orquestrar uma infraestrutura distribuída e resiliente para logística de entregas, capaz de escalar horizontalmente.</p>
+
+                <p><strong>A Estratégia:</strong>
+                    Abandonei o monólito para criar um ecossistema de microserviços desacoplados. Utilizei <strong>Apache Kafka</strong> para comunicação assíncrona (Event-Driven) entre o rastreamento e a gestão de couriers, garantindo que o sistema não trave em picos de acesso.</p>
+
+                <p><strong>Defesas Implementadas:</strong>
+                    Para evitar falhas em cascata, implementei o padrão <strong>Circuit Breaker</strong> (Resilience4j) no API Gateway e utilizei <strong>Eureka Service Discovery</strong> para que os serviços se encontrem dinamicamente na rede.</p>
+
                 <div class="tech-tags">
                     <span>Java 21</span>
-                    <span>Microserviços</span>
-                    <span>Spring Cloud</span>
-                    <span>Kafka</span>
-                    <span>DDD</span>
+                    <span>Spring Cloud Gateway</span>
+                    <span>Apache Kafka</span>
+                    <span>Docker Compose</span>
+                    <span>Resilience4j</span>
+                    <span>PostgreSQL</span>
                 </div>
-                <a href="https://github.com/weritonpetreca/petrecadelivery" target="_blank">Ver a Besta Conquistada (GitHub)</a>
+
+                <div class="project-links">
+                    <a href="https://github.com/weritonpetreca/petrecadelivery" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Ver Arquitetura</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>📚 Already Read That (Gamified Monorepo)</h3>
+                <p><strong>A Missão:</strong> Desenvolver uma aplicação Full Stack para engajamento de leitores ("Witchers"), unindo um backend robusto a uma interface reativa moderna.</p>
+
+                <p><strong>A Estratégia:</strong>
+                    Aplicando metodologias ágeis (XP/Scrum), construí um <strong>Monorepo</strong> organizado. O backend em <strong>Spring Boot 3.5</strong> gerencia regras complexas de gamificação (XP e Conquistas), enquanto o frontend em <strong>Angular 20</strong> consome a API REST para exibir Leaderboards em tempo real.</p>
+
+                <p><strong>Controle de Qualidade:</strong>
+                    A confiabilidade foi garantida via <strong>TDD</strong>, utilizando JUnit 5 e Mockito para cobrir cenários críticos de negócio antes mesmo da implementação final.</p>
+
+                <div class="tech-tags">
+                    <span>Java 21</span>
+                    <span>Spring Boot 3</span>
+                    <span>Angular 20</span>
+                    <span>Spring Data JPA</span>
+                    <span>H2 Database</span>
+                    <span>TDD</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="https://github.com/weritonpetreca/already-read-that" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Inspecionar Código</a>
+                </div>
             </div>
         </section>
 
@@ -158,32 +233,100 @@
                     <li>✅ <strong>Gestão de Recursos:</strong> Otimização de insumos e custos (lógica similar à otimização de cloud costs).</li>
                     <li>✅ <strong>Manutenção Preventiva:</strong> Antecipação de problemas na infraestrutura física antes que parassem a produção.</li>
                 </ul>
+            </div>
+
             <div class="tech-tags">
-            <span>Liderança</span>
-            <span>Gestão de Crise</span>
-            <span>Processos</span>
-            <span>Visão Sistêmica</span>
+                <span>Liderança</span>
+                <span>Gestão de Crise</span>
+                <span>Processos</span>
+                <span>Visão Sistêmica</span>
             </div>
         </section>
 
-        <section class="contract-section" data-aos="fade-up">
-            <h2>A Forja (Formação)</h2>
-            <ul class="education-list">
-                <li>Análise e Desenvolvimento de Software - UniFatecie (Em andamento: Previsão 2027/2)</li>
-                <li>Programa re/Start - Escola da Nuvem (Em andamento: Previsão 2026)</li>
-                <li>Bacharelado em Engenharia Ambiental - UNIFAL</li>
-                <li>Bacharelado Interdisciplinar em Ciência e Tecnologia - UNIFAL</li>
-            </ul>
-        </section>
+        <div class="timeline">
 
-        <section class="contract-section" data-aos="fade-up">
+            <div class="timeline-item active">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Previsão: 2027/2</span>
+                    <h3>Análise e Desenv. de Sistemas</h3>
+                    <h4>UniFatecie</h4>
+                    <p>A base teórica acadêmica. Foco em engenharia de software e estruturas de dados.</p>
+                    <span class="status-badge pulse">Em Andamento</span>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Previsão: 2026</span>
+                    <h3>Programa AWS re/Start</h3>
+                    <h4>Escola da Nuvem</h4>
+                    <p>Formação intensiva em fundamentos de nuvem, Linux, redes e segurança.</p>
+                    <span class="status-badge pulse">Concluído</span>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Concluído</span>
+                    <h3>Engenharia Ambiental & Ciência e Tec.</h3>
+                    <h4>UNIFAL</h4>
+                    <p>Onde fui forjado na lógica, estatística e gestão de projetos complexos.</p>
+                    <span class="status-badge completed">Concluído</span>
+                </div>
+            </div>
+
+        </div>
+
+        <section class="contract-section" data-aos="fade-up" id="contato">
             <h2>Enviar um Corvo (Contato)</h2>
-            <p>Se precisa de um especialista para um contrato digital, ou quer trocar conhecimentos sobre o ofício, aqui estão os meus sinais.</p>
-            <div class="contact-links">
-                <a href="https://www.linkedin.com/in/weriton-petreca" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/weritonpetreca" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="mailto:eulcfr@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.credly.com/users/weriton-luis-petreca" target="_blank" title="Certificações"><i class="fas fa-certificate"></i></a>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 40px;">
+                Meu medalhão está vibrando? Se você tem um desafio de arquitetura, uma vaga para Backend ou apenas quer discutir sobre Java e Cloud, envie seu sinal.
+            </p>
+
+            <div class="contact-grid">
+                <a href="https://www.linkedin.com/in/weriton-petreca" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <div class="icon-box"><i class="fab fa-linkedin-in"></i></div>
+                    <div class="card-info">
+                        <h3>LinkedIn</h3>
+                        <span>Conectar Profissionalmente</span>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/5535997231989?text=Ol%C3%A1%20Weriton%2C%20vi%20seu%20portf%C3%B3lio..." target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
+                    <div class="card-info">
+                        <h3>WhatsApp</h3>
+                        <span>Sinal Rápido (Chat)</span>
+                    </div>
+                </a>
+
+                <div class="contact-card copy-email" onclick="copiarEmail()" style="cursor: pointer;">
+                    <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                    <div class="card-info">
+                        <h3>Email</h3>
+                        <span id="email-display">eulcfr@gmail.com</span>
+                    </div>
+                    <span class="copy-feedback" id="copy-msg">Copiar</span>
+                </div>
+
+                <a href="https://github.com/weritonpetreca" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <div class="icon-box"><i class="fab fa-github"></i></div>
+                    <div class="card-info">
+                        <h3>GitHub</h3>
+                        <span>Inspecionar Códices</span>
+                    </div>
+                </a>
+
+                <a href="https://www.credly.com/users/weriton-luis-petreca" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <div class="icon-box"><i class="fas fa-certificate"></i></div>
+                    <div class="card-info">
+                        <h3>Credly</h3>
+                        <span>Verificar Insígnias</span>
+                    </div>
+                </a>
             </div>
         </section>
 
@@ -199,6 +342,38 @@
           duration: 800, // Duração da animação
           once: true,    // Animar apenas uma vez
       });
+    </script>
+
+    <script>
+        function copiarEmail() {
+            const email = "eulcfr@gmail.com";
+            navigator.clipboard.writeText(email).then(() => {
+                // Feedback Visual
+                const msg = document.getElementById("copy-msg");
+                const originalText = msg.innerText;
+
+                msg.innerText = "Copiado!";
+                msg.style.opacity = "1";
+                msg.style.backgroundColor = "var(--header-color)";
+                msg.style.color = "#000";
+
+                // Reseta depois de 2 segundos
+                setTimeout(() => {
+                    msg.innerText = originalText;
+                    msg.style.opacity = ""; // Volta ao CSS original
+                    msg.style.backgroundColor = "";
+                    msg.style.color = "";
+                }, 2000);
+            }).catch(err => {
+                console.error('Erro ao copiar:', err);
+            });
+        }
+    </script>
+
+    <script>
+        console.log("%c🐺 Wind's howling...", "color: #c8a365; font-size: 20px; font-weight: bold; font-family: sans-serif;");
+        console.log("%cParece que você está inspecionando meus feitiços. Se achou algum bug, é uma feature não documentada! 😉", "color: #e0e0e0; font-size: 14px;");
+        console.log("%cInteressado no código? Veja em: https://github.com/weritonpetreca", "font-size: 14px;");
     </script>
 
 </body>

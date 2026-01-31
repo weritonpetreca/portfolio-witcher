@@ -27,7 +27,8 @@ jobs:
             --exclude ".git/*" \
             --exclude ".github/*" \
             --exclude ".gitignore" \
-            --exclude "README.md"
+            --exclude "README.md" \
+            --cache-control "max-age=0, no-cache, no-store, must-revalidate"
 
       - name: Invalidate CloudFront Cache
         run: |

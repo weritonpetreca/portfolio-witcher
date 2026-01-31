@@ -36,6 +36,7 @@ Diferente de hospedagens tradicionais, este projeto utiliza uma arquitetura **Se
 * **Amazon CloudFront:** Cache e distribuição de conteúdo.
 * **Amazon Certificate Manager (ACM):** Segurança SSL.
 * **Cloudflare:** Gestão de DNS inteligente.
+* **GitHub Actions:** CI/CD para deploy automático no S3.
 
 ---
 
@@ -45,7 +46,7 @@ Se você deseja inspecionar o código ou testar alterações em sua própria má
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/weritonpetreca/portfolio-witcher.git](https://github.com/weritonpetreca/portfolio-witcher.git)
+    git clone https://github.com/weritonpetreca/portfolio-witcher.git
     ```
 2.  **Abra o arquivo:**
     Basta abrir o arquivo `index.html` em qualquer navegador moderno. Não é necessário servidor local (Node/Apache) para visualização básica.
@@ -56,6 +57,7 @@ Se você deseja inspecionar o código ou testar alterações em sua própria má
 
 Este portfólio serve como hub para meus principais projetos Back-End:
 
+* **Vivaldi Bank Core:** API financeira com Arquitetura Hexagonal e AWS.
 * **Already Read That:** API de catálogo de leituras com Gamificação (Java 21, Spring Boot).
 * **PetrecaDelivery:** Microsserviços com arquitetura orientada a eventos (Kafka, DDD).
 

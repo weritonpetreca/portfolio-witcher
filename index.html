@@ -259,7 +259,7 @@
             <div class="timeline-item">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <span class="timeline-date">Previsão: 2026</span>
+                    <span class="timeline-date">Concluído</span>
                     <h3>Programa AWS re/Start</h3>
                     <h4>Escola da Nuvem</h4>
                     <p>Formação intensiva em fundamentos de nuvem, Linux, redes e segurança.</p>
@@ -333,7 +333,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Weriton Luis Petreca. Forjado com café e lógica.</p>
+        <p>&copy; <span id="copyright-year">2026</span> Weriton Luis Petreca. Forjado com café e lógica.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -368,6 +368,10 @@
                 console.error('Erro ao copiar:', err);
             });
         }
+    </script>
+
+    <script>
+        document.getElementById("copyright-year").textContent = new Date().getFullYear();
     </script>
 
     <script>

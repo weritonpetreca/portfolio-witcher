@@ -3,6 +3,7 @@
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BNPP95MH0Q"></script>
+    <!-- sonar-disable-next-line -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -12,6 +13,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Weriton Petreca - Desenvolvedor Backend Java especializado em Spring Boot, AWS Cloud e Arquitetura de Microsserviços. Portfólio com projetos de Arquitetura Hexagonal, Kafka e Infraestrutura como Código.">
     <title>Weriton Petreca - Desenvolvedor Back-End</title>
 
     <meta property="og:title" content="Weriton Petreca | Backend Specialist & AWS Cloud Practitioner">
@@ -23,13 +25,13 @@
     <meta name="twitter:title" content="Weriton Petreca | Backend & Cloud">
     <meta name="twitter:description" content="Portfólio de engenharia de software focado em Java, Spring Boot e AWS.">
     <meta name="twitter:image" content="https://weriton.dev/preview-image.jpg">
-    
+
     <link rel="icon" type="image/png" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <link rel="stylesheet" href="style.css">
@@ -83,7 +85,7 @@
 
         <section class="contract-section" data-aos="fade-up">
             <h2>Arsenal do Ofício</h2>
-            
+
             <div class="arsenal-grid">
                 <div class="arsenal-category">
                     <h3><i class="fab fa-java"></i> Poções & Elixires (Back-End)</h3>
@@ -94,7 +96,7 @@
                         <li>REST APIs</li>
                     </ul>
                 </div>
-                
+
                 <div class="arsenal-category">
                     <h3><i class="fas fa-network-wired"></i> Sinais & Mensageiros (Comunicação)</h3>
                     <ul>
@@ -226,9 +228,9 @@
                 <h3>Gestão de Operações Críticas (Sítio Petreca)</h3>
                 <p><strong>De 2020 a 2025</strong> | Otimização de Processos & Recursos</p>
                 <p>
-                    Antes de gerenciar servidores, gerenciei vida e produção. Durante 5 anos, fui responsável pela infraestrutura, ciclo produtivo e operações de uma pecuária leiteira. 
+                    Antes de gerenciar servidores, gerenciei vida e produção. Durante 5 anos, fui responsável pela infraestrutura, ciclo produtivo e operações de uma pecuária leiteira.
                 </p>
-                <ul style="margin-top: 10px; list-style: none; padding-left: 0;">
+                <ul class="experience-list">
                     <li>✅ <strong>Resiliência:</strong> Atuação em ambiente de alta disponibilidade (24/7), onde falhas não eram uma opção.</li>
                     <li>✅ <strong>Gestão de Recursos:</strong> Otimização de insumos e custos (lógica similar à otimização de cloud costs).</li>
                     <li>✅ <strong>Manutenção Preventiva:</strong> Antecipação de problemas na infraestrutura física antes que parassem a produção.</li>
@@ -259,18 +261,18 @@
             <div class="timeline-item">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <span class="timeline-date">Concluído</span>
+                    <span class="timeline-date">02/26</span>
                     <h3>Programa AWS re/Start</h3>
                     <h4>Escola da Nuvem</h4>
                     <p>Formação intensiva em fundamentos de nuvem, Linux, redes e segurança.</p>
-                    <span class="status-badge pulse">Concluído</span>
+                    <span class="status-badge completed">Concluído</span>
                 </div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <span class="timeline-date">Concluído</span>
+                    <span class="timeline-date">05/18</span>
                     <h3>Engenharia Ambiental & Ciência e Tec.</h3>
                     <h4>UNIFAL</h4>
                     <p>Onde fui forjado na lógica, estatística e gestão de projetos complexos.</p>
@@ -282,7 +284,7 @@
 
         <section class="contract-section" data-aos="fade-up" id="contato">
             <h2>Enviar um Corvo (Contato)</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 40px;">
+            <p class="contact-intro">
                 Meu medalhão está vibrando? Se você tem um desafio de arquitetura, uma vaga para Backend ou apenas quer discutir sobre Java e Cloud, envie seu sinal.
             </p>
 
@@ -303,14 +305,14 @@
                     </div>
                 </a>
 
-                <div class="contact-card copy-email" onclick="copiarEmail()" style="cursor: pointer;">
+                <button class="contact-card copy-email" aria-label="Copiar endereço de email" tabindex="0">
                     <div class="icon-box"><i class="fas fa-envelope"></i></div>
                     <div class="card-info">
                         <h3>Email</h3>
                         <span id="email-display">eulcfr@gmail.com</span>
                     </div>
-                    <span class="copy-feedback" id="copy-msg">Copiar</span>
-                </div>
+                    <span class="copy-feedback" id="copy-msg" aria-live="polite">Copiar</span>
+                </button>
 
                 <a href="https://github.com/weritonpetreca" target="_blank" rel="noopener noreferrer" class="contact-card">
                     <div class="icon-box"><i class="fab fa-github"></i></div>
@@ -337,48 +339,7 @@
     </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({
-          duration: 800, // Duração da animação
-          once: true,    // Animar apenas uma vez
-      });
-    </script>
-
-    <script>
-        function copiarEmail() {
-            const email = "eulcfr@gmail.com";
-            navigator.clipboard.writeText(email).then(() => {
-                // Feedback Visual
-                const msg = document.getElementById("copy-msg");
-                const originalText = msg.innerText;
-
-                msg.innerText = "Copiado!";
-                msg.style.opacity = "1";
-                msg.style.backgroundColor = "var(--header-color)";
-                msg.style.color = "#000";
-
-                // Reseta depois de 2 segundos
-                setTimeout(() => {
-                    msg.innerText = originalText;
-                    msg.style.opacity = ""; // Volta ao CSS original
-                    msg.style.backgroundColor = "";
-                    msg.style.color = "";
-                }, 2000);
-            }).catch(err => {
-                console.error('Erro ao copiar:', err);
-            });
-        }
-    </script>
-
-    <script>
-        document.getElementById("copyright-year").textContent = new Date().getFullYear();
-    </script>
-
-    <script>
-        console.log("%c🐺 Wind's howling...", "color: #c8a365; font-size: 20px; font-weight: bold; font-family: sans-serif;");
-        console.log("%cParece que você está inspecionando meus feitiços. Se achou algum bug, é uma feature não documentada! 😉", "color: #e0e0e0; font-size: 14px;");
-        console.log("%cInteressado no código? Veja em: https://github.com/weritonpetreca", "font-size: 14px;");
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>

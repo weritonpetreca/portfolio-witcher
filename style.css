@@ -123,11 +123,9 @@ body {
     font-size: 1.4em;
     color: #e0e0e0;
     border-left: 4px solid var(--header-color);
-    padding-left: 20px;
     margin-bottom: 20px;
     font-style: italic;
-    background: linear-gradient(90deg, rgba(200, 163, 101, 0.1) 0%, transparent 100%);
-    padding: 15px;
+    padding: 15px 15px 15px 20px;
     border-radius: 0 5px 5px 0;
 }
 
@@ -202,7 +200,7 @@ body {
 
 .timeline-date {
     font-size: 0.85em;
-    color: #888;
+    color: #999;
     text-transform: uppercase;
     letter-spacing: 1px;
     display: block;
@@ -312,7 +310,7 @@ body {
 
 .card-info span {
     font-size: 0.85em;
-    color: #888;
+    color: #aaa;
 }
 
 /* Feedback de Cópia do Email */
@@ -324,7 +322,7 @@ body {
     text-transform: uppercase;
     color: var(--header-color);
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: all 0.3s;
     font-weight: bold;
     border: 1px solid var(--header-color);
     padding: 2px 6px;
@@ -333,6 +331,49 @@ body {
 
 .contact-card:hover .copy-feedback {
     opacity: 0.6;
+}
+
+.copy-feedback.copied {
+    opacity: 1;
+    background-color: var(--header-color);
+    color: #000;
+}
+
+/* Acessibilidade para card de email */
+.copy-email {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.copy-email:focus {
+    outline: 2px solid var(--header-color);
+    outline-offset: 2px;
+}
+
+/* Estilo para parágrafo de contato */
+.contact-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+/* Estilo para lista de experiência */
+.experience-list {
+    margin-top: 10px;
+    list-style: none;
+    padding-left: 0;
 }
 
 h1 {

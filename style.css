@@ -1,28 +1,25 @@
 /* --- Variáveis de Cor & Estilos Gerais --- */
 :root {
-    --background-color: #1a1a1a; /* Cinza bem escuro */
-    --parchment-bg: #252525;    /* Cor de fundo para as seções, um pouco mais clara */
-    --text-color: #e0e0e0;      /* Branco suave */
-    --header-color: #c8a365;   /* Dourado/bronze para títulos */
-    --border-color: #444;      /* Borda sutil */
-    --link-hover-color: #ff5555; /* Vermelho para destaque */
+    --background-color: #1a1a1a;
+    --parchment-bg: #252525;
+    --text-color: #e0e0e0;
+    --header-color: #c8a365;
+    --border-color: #444;
+    --link-hover-color: #ff5555;
 }
 
 html {
     scroll-behavior: smooth;
-    /* Mantenha o restante que já estiver aqui */
 }
 
 body {
-    /* Simulação de textura de ruído/pergaminho escuro */
     background-color: var(--background-color);
     background-image: linear-gradient(45deg, rgba(0,0,0,0.05) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.05) 75%, rgba(0,0,0,0.05)),
                       linear-gradient(45deg, rgba(0,0,0,0.05) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.05) 75%, rgba(0,0,0,0.05));
     background-size: 2px 2px;
     background-position: 0 0, 1px 1px;
-
     color: var(--text-color);
-    font-family: 'Lato', sans-serif; /* Fonte padrão */
+    font-family: 'Lato', sans-serif;
     line-height: 1.7;
     margin: 0;
     padding: 20px;
@@ -37,7 +34,6 @@ body {
     margin-bottom: 40px;
 }
 
-/* Container do Hero para alinhar foto e texto */
 .hero-container {
     display: flex;
     align-items: center;
@@ -46,20 +42,18 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 40px 20px;
-    flex-wrap: wrap; /* Para funcionar no celular */
+    flex-wrap: wrap;
 }
 
-/* Foto de Perfil Estilosa */
 .hero-avatar img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     border: 4px solid var(--header-color);
-    box-shadow: 0 0 20px rgba(200, 163, 101, 0.4); /* Brilho mágico */
+    box-shadow: 0 0 20px rgba(200, 163, 101, 0.4);
     object-fit: cover;
 }
 
-/* Badge da AWS */
 .aws-badge {
     width: 120px;
     height: auto;
@@ -71,17 +65,59 @@ body {
     filter: drop-shadow(0 0 10px #ff9900);
 }
 
-/* Botão de Chamada (CTA) */
+/* --- [NOVO] Badge Open to Work ---
+   Exibe disponibilidade de forma imediata e visual.
+   A cor verde (#4caf50) é lida como "ativo/disponível" universalmente.
+   O fa-circle animado reusa o @keyframes pulse-glow já definido
+   mais abaixo, sem adicionar CSS extra. */
+.open-to-work {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    font-size: 0.85em;
+    color: #4caf50;
+    border: 1px solid #4caf50;
+    padding: 5px 14px;
+    border-radius: 20px;
+    background-color: rgba(76, 175, 80, 0.07);
+    letter-spacing: 0.3px;
+}
+.open-to-work .fa-circle {
+    font-size: 0.55em;
+    vertical-align: middle;
+    margin-right: 4px;
+    animation: pulse-glow-green 2s infinite;
+}
+
+@keyframes pulse-glow-green {
+    0%   { opacity: 1; }
+    50%  { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+
+/* --- [NOVO] Grupo de botões CTA ---
+   Antes havia apenas um botão isolado. Agora os dois botões ficam
+   side-by-side via flexbox. O `flex-wrap: wrap` garante que em
+   telas pequenas eles empilhem verticalmente sem quebrar o layout. */
+.hero-cta-group {
+    display: flex;
+    gap: 14px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .cta-button {
     display: inline-block;
-    margin-top: 20px;
     padding: 10px 25px;
     background-color: transparent;
     border: 2px solid var(--header-color);
     color: var(--header-color);
     font-family: 'MedievalSharp', cursive;
-    font-size: 1.2em;
+    font-size: 1.1em;
     border-radius: 5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .cta-button:hover {
@@ -90,23 +126,40 @@ body {
     box-shadow: 0 0 15px var(--header-color);
 }
 
-/* --- Estilos do Novo Códice --- */
+/* --- [NOVO] Variante secundária do botão CTA ---
+   Usa fundo sólido sutil + ícone para se distinguir visualmente
+   do botão principal sem competir com ele em peso visual.
+   A hierarquia é: "Contratar" (primário) > "Baixar CV" (secundário). */
+.cta-button--secondary {
+    background-color: rgba(200, 163, 101, 0.1);
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+.cta-button--secondary i {
+    margin-right: 6px;
+}
+.cta-button--secondary:hover {
+    background-color: var(--header-color);
+    color: var(--background-color);
+}
+
+/* --- Estilos do Códice --- */
 .codex-container {
     display: flex;
     gap: 30px;
     align-items: flex-start;
 }
 
-/* Ícone grande estilo "Selo" */
 .codex-icon {
     font-size: 4em;
     color: var(--header-color);
     opacity: 0.8;
     padding-top: 10px;
-    display: none; /* Esconde em celulares por padrão */
+    display: none;
 }
 
-/* Mostra o ícone apenas em telas maiores */
 @media (min-width: 768px) {
     .codex-icon {
         display: block;
@@ -117,7 +170,6 @@ body {
     flex: 1;
 }
 
-/* Frase de Destaque */
 .highlight-quote {
     font-family: 'MedievalSharp', cursive;
     font-size: 1.4em;
@@ -129,7 +181,6 @@ body {
     border-radius: 0 5px 5px 0;
 }
 
-/* Letra Capitular (Estilo Medieval) */
 .drop-cap {
     float: left;
     font-family: 'MedievalSharp', cursive;
@@ -142,21 +193,51 @@ body {
 }
 
 .project-card p {
-    margin-bottom: 15px; /* Mais espaço entre os parágrafos */
-    font-size: 0.95em;   /* Um pouco menor para ficar elegante */
-    color: #ccc;         /* Cinza um pouco mais claro para leitura */
+    margin-bottom: 15px;
+    font-size: 0.95em;
+    color: #ccc;
 }
 
 .project-card strong {
-    color: var(--header-color); /* Destaca os termos chaves em Dourado */
+    color: var(--header-color);
 }
 
+/* --- [NOVO] Métricas dos projetos ---
+   Números concretos (cobertura, nº de serviços, latência) transformam
+   descrições qualitativas em evidências verificáveis. O fundo sutil
+   e o ícone colorido diferenciam visualmente das tech-tags,
+   criando hierarquia de informação dentro do card. */
+.project-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 14px 0;
+}
+
+.project-metrics span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: rgba(200, 163, 101, 0.08);
+    border: 1px solid rgba(200, 163, 101, 0.3);
+    color: #d4b87a;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.82em;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+}
+
+.project-metrics span i {
+    font-size: 0.9em;
+    opacity: 0.85;
+}
 
 /* --- Timeline da Forja (Formação) --- */
 .timeline {
     position: relative;
-    padding-left: 30px; /* Espaço para a linha */
-    border-left: 3px solid var(--border-color); /* A linha vertical */
+    padding-left: 30px;
+    border-left: 3px solid var(--border-color);
     margin-left: 10px;
 }
 
@@ -165,28 +246,26 @@ body {
     position: relative;
 }
 
-/* O "Ponto" na linha */
 .timeline-marker {
     position: absolute;
-    left: -39px; /* Ajuste fino para centralizar na linha */
+    left: -39px;
     top: 5px;
     width: 16px;
     height: 16px;
     border-radius: 50%;
     background-color: var(--background-color);
-    border: 3px solid var(--header-color); /* Dourado */
+    border: 3px solid var(--header-color);
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     z-index: 1;
 }
 
-/* Destaque para itens ativos/em andamento */
 .timeline-item.active .timeline-marker {
     background-color: var(--header-color);
-    box-shadow: 0 0 15px var(--header-color); /* Brilho mágico */
+    box-shadow: 0 0 15px var(--header-color);
 }
 
 .timeline-content {
-    background-color: rgba(255, 255, 255, 0.03); /* Fundo sutil */
+    background-color: rgba(255, 255, 255, 0.03);
     padding: 15px 20px;
     border-radius: 5px;
     border: 1px solid transparent;
@@ -221,7 +300,6 @@ body {
     font-size: 1em;
 }
 
-/* Badges de Status */
 .status-badge {
     display: inline-block;
     padding: 4px 10px;
@@ -245,10 +323,9 @@ body {
     animation: pulse-glow 2s infinite;
 }
 
-/* Animação de "Pulso" para cursos em andamento */
 @keyframes pulse-glow {
-    0% { box-shadow: 0 0 0 0 rgba(200, 163, 101, 0.4); }
-    70% { box-shadow: 0 0 0 10px rgba(200, 163, 101, 0); }
+    0%   { box-shadow: 0 0 0 0 rgba(200, 163, 101, 0.4); }
+    70%  { box-shadow: 0 0 0 10px rgba(200, 163, 101, 0); }
     100% { box-shadow: 0 0 0 0 rgba(200, 163, 101, 0); }
 }
 
@@ -269,7 +346,7 @@ body {
     align-items: center;
     gap: 15px;
     transition: all 0.3s ease;
-    text-decoration: none; /* Remove sublinhado de links */
+    text-decoration: none;
     position: relative;
     overflow: hidden;
 }
@@ -304,7 +381,7 @@ body {
     margin: 0;
     font-size: 1.1em;
     color: #fff;
-    font-family: 'Lato', sans-serif; /* Fonte limpa para leitura */
+    font-family: 'Lato', sans-serif;
     font-weight: bold;
 }
 
@@ -313,7 +390,6 @@ body {
     color: #aaa;
 }
 
-/* Feedback de Cópia do Email */
 .copy-feedback {
     position: absolute;
     right: 15px;
@@ -339,7 +415,6 @@ body {
     color: #000;
 }
 
-/* Acessibilidade para card de email */
 .copy-email {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.03);
@@ -362,14 +437,12 @@ body {
     outline-offset: 2px;
 }
 
-/* Estilo para parágrafo de contato */
 .contact-intro {
     text-align: center;
     max-width: 700px;
     margin: 0 auto 40px;
 }
 
-/* Estilo para lista de experiência */
 .experience-list {
     margin-top: 10px;
     list-style: none;
@@ -377,7 +450,7 @@ body {
 }
 
 h1 {
-    font-family: 'MedievalSharp', cursive; /* Fonte temática */
+    font-family: 'MedievalSharp', cursive;
     color: var(--header-color);
     font-size: 3em;
     margin: 10px 0 5px;
@@ -391,7 +464,6 @@ h1 {
     margin: 0 auto;
 }
 
-/* --- Corpo Principal (Códice) --- */
 .content-codex {
     max-width: 900px;
     width: 100%;
@@ -402,12 +474,12 @@ h1 {
     border: 1px solid var(--border-color);
     padding: 30px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra mais pronunciada */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
 }
 
 h2 {
-    font-family: 'MedievalSharp', cursive; /* Fonte temática */
+    font-family: 'MedievalSharp', cursive;
     color: var(--header-color);
     border-bottom: 2px solid var(--border-color);
     padding-bottom: 10px;
@@ -415,9 +487,7 @@ h2 {
     font-size: 2.2em;
 }
 
-/* --- Estilos Específicos das Seções --- */
-
-/* Arsenal (Habilidades) - NOVO GRID */
+/* --- Arsenal --- */
 .arsenal-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -443,7 +513,6 @@ h2 {
     padding-left: 20px;
 }
 
-/* Adiciona um "marcador" rústico */
 .arsenal-category li::before {
     content: '»';
     position: absolute;
@@ -453,7 +522,7 @@ h2 {
     font-weight: bold;
 }
 
-/* Projetos - NOVO ESTILO DE TAGS */
+/* --- Projetos --- */
 .project-card {
     border-left: 4px solid var(--header-color);
     padding-left: 20px;
@@ -483,24 +552,12 @@ h2 {
     margin-bottom: 8px;
 }
 
-/* Formação */
-.education-list {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.education-list li {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-}
-
-/* Links e Contato */
+/* --- Links --- */
 a {
     color: var(--header-color);
     text-decoration: none;
     font-weight: bold;
-    /* Alterado para 'all' para animar qualquer mudança (cor, tamanho, sombra) */
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
 }
 
 a:hover {
@@ -511,15 +568,14 @@ a:hover {
 
 .contact-links a {
     margin: 0 15px;
-    font-size: 1.5em; /* Aumentei um pouco a base para ficarem mais visíveis */
-    display: inline-block; /* CRUCIAL: 'transform' funciona melhor em blocos inline */
+    font-size: 1.5em;
+    display: inline-block;
 }
 
-/* Regra específica para o efeito de Zoom nos ícones */
 .contact-links a:hover {
-    color: var(--header-color); /* Mantém dourado ou muda para vermelho se preferir */
-    transform: scale(1.3); /* Aumenta 30% do tamanho */
-    text-shadow: 0 0 10px rgba(200, 163, 101, 0.6); /* Adiciona um brilho mágico */
+    color: var(--header-color);
+    transform: scale(1.3);
+    text-shadow: 0 0 10px rgba(200, 163, 101, 0.6);
 }
 
 /* --- Rodapé --- */
@@ -529,48 +585,46 @@ footer {
     color: #888;
 }
 
-/* --- Scrollbar Personalizada (Estilo Bruxo) --- */
-::-webkit-scrollbar {
-    width: 10px;
-}
-::-webkit-scrollbar-track {
-    background: var(--background-color); 
-}
-::-webkit-scrollbar-thumb {
-    background: var(--header-color); 
-    border-radius: 5px;
-    border: 2px solid var(--background-color);
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #e0c080; /* Um dourado mais claro ao passar o mouse */
-}
+/* --- Scrollbar --- */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--background-color); }
+::-webkit-scrollbar-thumb { background: var(--header-color); border-radius: 5px; border: 2px solid var(--background-color); }
+::-webkit-scrollbar-thumb:hover { background: #e0c080; }
 
 .project-card, .arsenal-category, .contact-links a {
     transition: all 0.3s ease;
 }
 
 .project-card:hover {
-    border-left-color: var(--link-hover-color); /* Muda a cor da borda lateral */
-    box-shadow: 0 0 15px rgba(200, 163, 101, 0.15); /* Brilho dourado sutil */
-    transform: translateY(-2px); /* Levanta levemente */
+    border-left-color: var(--link-hover-color);
+    box-shadow: 0 0 15px rgba(200, 163, 101, 0.15);
+    transform: translateY(-2px);
 }
 
-/* --- Ajustes Finais para Mobile --- */
+/* Links dos projetos */
+.project-links {
+    margin-top: 10px;
+}
+
+/* --- Mobile --- */
 @media (max-width: 768px) {
-    /* Centraliza o texto do Hero no celular */
     .hero-container {
         text-align: center;
-        flex-direction: column-reverse; /* Opcional: Joga a foto para cima do texto se preferir */
+        flex-direction: column-reverse;
     }
-
-    /* Centraliza os badges (certificações) no celular */
     .hero-badges {
         justify-content: center;
         display: flex;
     }
-
-    /* Ajuste para não colar nas bordas em telas pequenas */
     .content-codex {
         padding: 0 15px;
+    }
+    /* Botões CTA centralizados no mobile */
+    .hero-cta-group {
+        justify-content: center;
+    }
+    /* Métricas empilham melhor em telas pequenas */
+    .project-metrics {
+        flex-direction: column;
     }
 }

@@ -20,7 +20,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Deploy do S3
+      # Arquivos estáticos (imagens, fontes, CSS, JS) — cache longo de 1 ano.
+      # O browser só baixa novamente se o nome/hash do arquivo mudar.
+      # Isso reduz latência nas visitas subsequentes e melhora os Core Web Vitals.
+      - name: Deploy Static Assets (cache longo)
         run: |
           aws s3 sync . s3://${{ secrets.AWS_S3_BUCKET_NAME }} \
             --delete \
@@ -28,7 +31,22 @@ jobs:
             --exclude ".github/*" \
             --exclude ".gitignore" \
             --exclude "README.md" \
-            --cache-control "max-age=0, no-cache, no-store, must-revalidate"
+            --exclude "*.html" \
+            --exclude "robots.txt" \
+            --exclude "sitemap.xml" \
+            --cache-control "max-age=31536000, immutable"
+
+      # HTML, robots.txt e sitemap.xml — sempre revalidados.
+      # max-age=0 + must-revalidate garante que o recrutador nunca veja
+      # uma versão antiga do portfólio após um deploy.
+      - name: Deploy HTML e arquivos de descoberta (sem cache)
+        run: |
+          for file in index.html robots.txt sitemap.xml; do
+            if [ -f "$file" ]; then
+              aws s3 cp "$file" s3://${{ secrets.AWS_S3_BUCKET_NAME }}/"$file" \
+                --cache-control "max-age=0, no-cache, must-revalidate"
+            fi
+          done
 
       - name: Invalidate CloudFront Cache
         run: |
